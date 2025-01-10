@@ -1,0 +1,31 @@
+@use "sass:color";
+
+// Override default theme colors
+$primary: #d90086;
+$danger: #fff236;
+
+// Import CoreUI
+@import "../node_modules/@coreui/coreui/scss/functions";
+@import "../node_modules/@coreui/coreui/scss/variables";
+@import "../node_modules/@coreui/coreui/scss/maps";
+@import "../node_modules/@coreui/coreui/scss/mixins";
+@import "../node_modules/@coreui/coreui/scss/root";
+@import "../node_modules/@coreui/coreui/scss/coreui";
+
+// Custom button styles
+.btn-primary {
+  background-color: $primary !important;
+  border-color: $primary !important;
+  &:hover {
+    background-color: color.scale($primary, $lightness: -10%) !important; // Darken by 10%
+    border-color: color.scale($primary, $lightness: -15%) !important; // Darken by 15%
+  }
+}
+.btn-danger {
+    background-color: $danger !important;
+    border-color: $danger !important;
+    &:hover {
+      background-color: color.scale($danger, $lightness: -10%) !important; // Darken by 10%
+      border-color: color.scale($danger, $lightness: -15%) !important; // Darken by 15%
+    }
+  }
